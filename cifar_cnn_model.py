@@ -70,7 +70,7 @@ model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 
-callback = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=3)
+callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3)
 
 
 history = model.fit(train_images, train_labels, epochs=100, 
