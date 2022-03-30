@@ -88,5 +88,5 @@ test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 
 print(test_acc)
 
-prediction = model.predict(test_images[0].reshape(1, 32, 32, 3))
+prediction = model.predict(test_images[-1].reshape(1, 32, 32, 3))
 prediction_df = pd.DataFrame(zip(class_names,prediction[0]), columns=['class', 'probability'])
